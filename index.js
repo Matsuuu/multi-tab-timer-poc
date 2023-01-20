@@ -6,20 +6,35 @@ const TIMER_KEY = "timer-time-key";
 timerButton.addEventListener("click", () => {
     const timeNow = Date.now();
     const timeOut = timeNow + 10 * 1000;
-    localStorage.setItem(TIMER_KEY, timeNow.toString());
+    localStorage.setItem(TIMER_KEY, timeOut.toString());
     updateTimerValue();
 })
 
 document.addEventListener("visibilitychange", (ev) => {
-    updateTimerValue();
+    const visibilityState = document.visibilityState;
+    if (visibilityState === "visible") {
+        checkTimer();
+    }
 });
 
 window.addEventListener("load", () => {
-    updateTimerValue();
+    checkTimer();
 })
 
 function checkTimer() {
     updateTimerValue();
+    const timeNow = Date.now();
+    if (timeNow > getTimerValue()) {
+        displayAlert();
+    }
+}
+
+function displayAlert() {
+    alert("Time's up. Logging out");
+}
+
+function getTimerValue() {
+    return Number(localStorage.getItem(TIMER_KEY) || 0);
 }
 
 function updateTimerValue() {
