@@ -1,0 +1,23 @@
+{
+  "name": "multi-tab-timer-poc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+      "start": "wds --watch --node-resolve --open --app-index index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Matsuuu/multi-tab-timer-poc.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Matsuuu/multi-tab-timer-poc/issues"
+  },
+  "homepage": "https://github.com/Matsuuu/multi-tab-timer-poc#readme",
+  "devDependencies": {
+    "@web/dev-server": "^0.1.35"
+  }
+}
